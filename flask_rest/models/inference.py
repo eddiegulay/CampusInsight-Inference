@@ -36,21 +36,9 @@ def make_inference(input_data):
     predictions = {}
 
     for model_name, model in models.items():
-        # Assuming 'input_data' is a DataFrame with the same columns as the training data
-        # Adjust the input_data accordingly based on your specific needs
+        # 'input_data' is a DataFrame with the same columns as the training data
         model_predictions = model.predict(input_data)
         predictions[model_name] = model_predictions[0]
 
     return predictions
 
-if __name__ == "__main__":
-    # Example usage if you run inference.py directly
-    # Load your input data for inference (replace 'input_data.csv' with your actual file path)
-    input_data = [0, 2, 0, 1, 7, 2, 11, 2, 1, 11, 0, 7]
-
-    # Make predictions using all models
-    all_predictions = make_inference([input_data])
-
-
-
-print(all_predictions)
