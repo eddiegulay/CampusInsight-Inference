@@ -1,0 +1,44 @@
+<script>
+
+var xhttp = new XMLHttpRequest();
+var url = 'https://squid-app-avmq9.ondigitalocean.app/';  // Replace with your actual endpoint
+
+// Define the data to send
+var data = {
+    "location_name": 1,
+    "home_language": 2,
+    "hh_occupation": 0,
+    "hh_edu": 1,
+    "hh_size": 7,
+    "school_distanceKm": 2,
+    "age": 11,
+    "gender": 2,
+    "mothers_edu": 1,
+    "grade": 11,
+    "meansToSchool": 0,
+    "hh_children": 7
+};
+
+// Convert data to JSON string
+var jsonData = JSON.stringify(data);
+
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Handle successful response
+        console.log('Success:', this.responseText);
+    } else if (this.readyState == 4) {
+        // Handle error or non-200 status
+        console.error('Error:', this.status);
+    }
+};
+
+// Open a POST request to the specified URL
+xhttp.open('POST', url, true);
+
+// Set the content type
+xhttp.setRequestHeader('Content-Type', 'application/json');
+
+// Send the JSON data
+xhttp.send(jsonData);
+
+</script>
