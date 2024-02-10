@@ -119,7 +119,7 @@ The project utilizes several state-of-the-art machine learning models for making
 
 ## Error Handling
 
-In the case of errors, the API will return a JSON response with an error message and the corresponding HTTP status code.
+Inference is done via POST requests to the `/` endpoint. If the input data is not in the correct format, the server will return a 400 Bad Request error with a JSON response containing the error message.
 
 ## Contributors
 
