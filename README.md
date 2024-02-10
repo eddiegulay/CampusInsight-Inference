@@ -115,7 +115,7 @@ Example:
 
 ## Models
 
-The project utilizes several state-of-the-art machine learning models for making predictions, including Random Forest, Logistic Regression, K-Nearest Neighbors, Decision Tree, Gaussian Naive Bayes, Multilayer Perceptron, Support Vector Machine, Linear Discriminant Analysis, and Adaboost.
+The project utilizes several sklearn machine learning models for making predictions, including Random Forest, Logistic Regression, K-Nearest Neighbors, Decision Tree, Gaussian Naive Bayes, Multilayer Perceptron, Support Vector Machine, Linear Discriminant Analysis, and Adaboost.
 
 ## Error Handling
 
