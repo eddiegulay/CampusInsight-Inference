@@ -4,6 +4,9 @@
 
 Welcome to the Campus Dropout Prediction, a  machine learning project designed to predict the likelihood of students dropping out based on various input features. This documentation aims to guide users through the installation process, usage details, and understanding of the model's output.
 
+![image](https://github.com/eddiegulay/CampusInsight-Inference/assets/88213379/9e75e1e6-8755-43f4-b040-2ce205021dd3)
+
+
 ## Table of Contents
 
 - [Campus Dropout Prediction Documentation](#campus-dropout-prediction-documentation)
