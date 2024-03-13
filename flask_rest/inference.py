@@ -25,14 +25,14 @@ def load_models():
     model_files = [
         "AdaBoost.joblib",
         "BaggingClassifier.joblib",
-        "Decision Tree.joblib",
-        "Gaussian Naive Bayes.joblib",
+        "DecisionTree.joblib",
+        "GaussianNaiveBayes.joblib",
         "GradientBoostingClassifier.joblib",
         "KNeighborsClassifier.joblib",
-        "Linear Discriminant Analysis.joblib",
-        "Logistic Regression.joblib",
-        "Multilayer Perceptron.joblib",
-        "Random Forest.joblib"
+        "LinearDiscriminant Analysis.joblib",
+        "LogisticRegression.joblib",
+        "MultilayerPerceptron.joblib",
+        "RandomForest.joblib"
     ]
 
     for model_file in model_files:
