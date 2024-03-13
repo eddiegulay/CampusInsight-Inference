@@ -8,6 +8,9 @@ def get_model_path(model_file):
     model_path = f'flask_rest/models/{model_file}'
     return model_path
 
+def get_encoder_path(encoder_file):
+    encoder_path = f'flask_rest/encoders/{encoder_file}'
+    return encoder_path
 
 def load_models():
     """
