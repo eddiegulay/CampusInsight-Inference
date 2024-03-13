@@ -29,7 +29,7 @@ def load_models():
         "GaussianNaiveBayes.joblib",
         "GradientBoostingClassifier.joblib",
         "KNeighborsClassifier.joblib",
-        "LinearDiscriminant Analysis.joblib",
+        "LinearDiscriminantAnalysis.joblib",
         "LogisticRegression.joblib",
         "MultilayerPerceptron.joblib",
         "RandomForest.joblib"
@@ -42,7 +42,7 @@ def load_models():
 
     return models
 
-def make_inference(input_data, models):
+def make_inference(target_data, models):
     """
     Make predictions using all loaded models.
     :param input_data: Pandas DataFrame containing input data for inference.

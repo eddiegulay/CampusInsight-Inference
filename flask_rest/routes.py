@@ -46,7 +46,7 @@ class DropPrediction(Resource):
 
 
         # Make inference using the models
-        predictions = make_inference(input_data, models=models)
+        predictions = make_inference(target_data_for_inference, models=models)
 
         return {'predictions': predictions}
 
