@@ -5,7 +5,7 @@ import pandas as pd
 
 # function to return actual path of the model from base path
 def get_model_path(model_file):
-    model_path = 'flask_rest/models/' + model_file
+    model_path = f'flask_rest/models/{model_file}'
     return model_path
 
 
