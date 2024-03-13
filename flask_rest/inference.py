@@ -6,6 +6,66 @@ import pandas as pd
 """ Global """
 dropout_mapping = {0: 'No', 1: 'Yes'}
 
+gender_mapping = {1: 'Male', 2: 'Female'}
+home_language_mapping = {0: 'Kiswahili', 1: 'English', 2: 'Native language'}
+hh_occupation_mapping = {0: 'Other', 1: 'Unemployed', 2: 'Agriculture', 3: 'Self-employed', 4: 'Public sector', 5: 'Private sector', 6: 'Housewife'}
+hh_children_mapping = {0: 'None', 1: 'Two Children', 2: 'Three Children', 3: 'Four Children', 4: 'Five Children', 5: 'More than five'}
+mothers_edu_mapping = {0: 'None', 1: 'Primary', 2: 'Secondary', 3: 'Postsecondary'}
+hh_edu_mapping = {0: 'None', 1: 'Primary', 2: 'Secondary', 3: 'Postsecondary'}
+meansToSchool_mapping = {0: 'Walk', 1: 'Bicycle/motorbike', 2: 'Public transport', 3: 'Private car'}
+location_name_mapping = {0: 'Rural', 1: 'Urban'}
+grade_mapping = {9: 'Form One', 10: 'Form Two', 11: 'Form Three', 12: 'Form Four'}
+dropout_mapping = {0: 'No', 1: 'Yes'}
+school_distance_mapping = {1: '0-0.5 km', 2: '0.5-1 km', 3: '1-2 km', 4: '2-3 km', 5: '4-5 km', 6: '6-7 km', 7: '7-10 km', 8: 'More than 11 km'}
+
+# Reverse mappings
+gender_mapping_reverse = {v: k for k, v in gender_mapping.items()}
+home_language_mapping_reverse = {v: k for k, v in home_language_mapping.items()}
+hh_occupation_mapping_reverse = {v: k for k, v in hh_occupation_mapping.items()}
+hh_children_mapping_reverse = {v: k for k, v in hh_children_mapping.items()}
+mothers_edu_mapping_reverse = {v: k for k, v in mothers_edu_mapping.items()}
+hh_edu_mapping_reverse = {v: k for k, v in hh_edu_mapping.items()}
+meansToSchool_mapping_reverse = {v: k for k, v in meansToSchool_mapping.items()}
+location_name_mapping_reverse = {v: k for k, v in location_name_mapping.items()}
+grade_mapping_reverse = {v: k for k, v in grade_mapping.items()}
+dropout_mapping_reverse = {v: k for k, v in dropout_mapping.items()}
+school_distance_mapping_reverse = {v: k for k, v in school_distance_mapping.items()}
+
+
+def encode_row(row, dropout=False):
+    row = row.copy()
+    row['gender'] = gender_mapping[row['gender']]
+    row['home_language'] = home_language_mapping[row['home_language']]
+    row['hh_occupation'] = hh_occupation_mapping[row['hh_occupation']]
+    row['hh_children'] = hh_children_mapping[row['hh_children']]
+    row['mothers_edu'] = mothers_edu_mapping[row['mothers_edu']]
+    row['hh_edu'] = hh_edu_mapping[row['hh_edu']]
+    row['meansToSchool'] = meansToSchool_mapping[row['meansToSchool']]
+    row['location_name'] = location_name_mapping[row['location_name']]
+    row['grade'] = grade_mapping[row['grade']]
+    row['school_distanceKm'] = school_distance_mapping[row['school_distanceKm']]
+    row['hh_size'] = hh_children_mapping[row['hh_size']]
+    if dropout:
+        row['dropout'] = dropout_mapping[row['dropout']]
+    return row
+
+def decode_row(row, dropout=False):
+    row = row.copy()
+    row['gender'] = gender_mapping_reverse[row['gender']]
+    row['home_language'] = home_language_mapping_reverse[row['home_language']]
+    row['hh_occupation'] = hh_occupation_mapping_reverse[row['hh_occupation']]
+    row['hh_children'] = hh_children_mapping_reverse[row['hh_children']]
+    row['mothers_edu'] = mothers_edu_mapping_reverse[row['mothers_edu']]
+    row['hh_edu'] = hh_edu_mapping_reverse[row['hh_edu']]
+    row['meansToSchool'] = meansToSchool_mapping_reverse[row['meansToSchool']]
+    row['location_name'] = location_name_mapping_reverse[row['location_name']]
+    row['grade'] = grade_mapping_reverse[row['grade']]
+    row['school_distanceKm'] = school_distance_mapping_reverse[row['school_distanceKm']]
+    row['hh_size'] = hh_children_mapping_reverse[row['hh_size']]
+    if dropout:
+        row['dropout'] = dropout_mapping[row['dropout']]
+
+    return row
 
 # function to return actual path of the model from base path
 def get_model_path(model_file):
