@@ -2,6 +2,7 @@
 
 import joblib
 import pandas as pd
+import numpy as np
 
 """ Global """
 dropout_mapping = {0: 'No', 1: 'Yes'}
@@ -115,6 +116,7 @@ def make_inference(target_data, models):
     for model_name, model in models.items():
         # 'input_data' is a DataFrame with the same columns as the training data
         predicted_class, predicted_probabilities = make_prediction(target_data, model, encoder, dropout_mapping)
+        model_name = model_name.split('.')[0]
         predictions[model_name] = {
             'predicted_class': predicted_class,
             'predicted_probabilities': list(predicted_probabilities)
