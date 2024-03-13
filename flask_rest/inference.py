@@ -23,19 +23,20 @@ def load_models():
     """
     models = {}
     model_files = [
-        "random_forest_model.joblib",
-        "logistic_regression_model.joblib",
-        "k-nearest_neighbors_model.joblib",
-        "decision_tree_model.joblib",
-        "gaussian_naive_bayes_model.joblib",
-        "multilayer_perceptron_model.joblib",
-        "support_vector_machine_model.joblib",
-        "linear_discriminant_analysis_model.joblib",
-        "adaboost_model.joblib"
+        "AdaBoost.joblib",
+        "BaggingClassifier.joblib",
+        "Decision Tree.joblib",
+        "Gaussian Naive Bayes.joblib",
+        "GradientBoostingClassifier.joblib",
+        "KNeighborsClassifier.joblib",
+        "Linear Discriminant Analysis.joblib",
+        "Logistic Regression.joblib",
+        "Multilayer Perceptron.joblib",
+        "Random Forest.joblib"
     ]
 
     for model_file in model_files:
-        model_name = model_file.split('_model')[0].title().replace('_', ' ')
+        model_name = model_file
         model = joblib.load( get_model_path(model_file) )
         models[model_name] = model
 
