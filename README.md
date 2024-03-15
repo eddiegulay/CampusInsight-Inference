@@ -79,19 +79,20 @@ The input data should be a JSON object with the following format:
 
 ```json
 {
-  "location_name": 1,
-  "home_language": 2,
-  "hh_occupation": 0,
-  "hh_edu": 1,
-  "hh_size": 7,
-  "school_distanceKm": 2,
-  "age": 11,
-  "gender": 2,
-  "mothers_edu": 1,
-  "grade": 11,
-  "meansToSchool": 0,
-  "hh_children": 7
+    "location_name": "Urban",
+    "home_language": "English",
+    "hh_occupation": "Private sector",
+    "hh_edu": "None",
+    "hh_size": "More than five",
+    "school_distanceKm": "7-10 km",
+    "age": 16,
+    "gender": "Female",
+    "mothers_edu": "None",
+    "grade": "Form One",
+    "meansToSchool": "Walk",
+    "hh_children": "More than five"
 }
+
 ```
 
 ## Output Format
@@ -103,15 +104,76 @@ Example:
 ```json
 {
   "predictions": {
-    "Random Forest": "1",
-    "Logistic Regression": "1",
-    "K-Nearest Neighbors": "1",
-    "Decision Tree": "1",
-    "Gaussian Naive Bayes": "1",
-    "Multilayer Perceptron": "1",
-    "Support Vector Machine": "1",
-    "Linear Discriminant Analysis": "1",
-    "Adaboost": "1"
+    "AdaBoost": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.4820458943856379,
+        0.5179541056143622
+      ]
+    },
+    "BaggingClassifier": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.0,
+        1.0
+      ]
+    },
+    "DecisionTree": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.0,
+        1.0
+      ]
+    },
+    "GaussianNaiveBayes": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        1.525064456842568e-221,
+        1.0
+      ]
+    },
+    "GradientBoostingClassifier": {
+      "predicted_class": "No",
+      "predicted_probabilities": [
+        0.7427914618026694,
+        0.25720853819733064
+      ]
+    },
+    "KNeighborsClassifier": {
+      "predicted_class": "No",
+      "predicted_probabilities": [
+        0.6,
+        0.4
+      ]
+    },
+    "LinearDiscriminantAnalysis": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.002812547334127169,
+        0.9971874526658728
+      ]
+    },
+    "LogisticRegression": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.07167075943804024,
+        0.9283292405619598
+      ]
+    },
+    "MultilayerPerceptron": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        7.95127821529018e-06,
+        0.9999920487217847
+      ]
+    },
+    "RandomForest": {
+      "predicted_class": "Yes",
+      "predicted_probabilities": [
+        0.42,
+        0.58
+      ]
+    }
   }
 }
 ```
